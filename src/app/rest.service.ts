@@ -57,12 +57,7 @@ export class RestService {
 
   private async fetchData(): Promise<any> {
     return (
-      await firstValueFrom<any>(this.http.get(this.baseURL + '/api/me', {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        responseType: 'json'
-      }))
-    ).r;
+      await firstValueFrom<any>(this.http.get('https://dummyjson.com/users'))
+    );
   }
 }
